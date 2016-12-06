@@ -1,20 +1,29 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  values: any = {
-    amount: 2000,
-    tax: 16,
-  };
+export class AppComponent implements OnInit {
+  tax: number = 16;
   result: number = 0;
+
   title: string = "Awesome tax calculator";
   subtitle: string = "Makes your life easier";
 
-  calculate(){
-    this.result = this.values.amount * this.values.tax / 100;
+  ngOnInit(){
+  }
+
+  increase():any{
+    this.tax++;
+  }
+
+  decrease():any{
+    this.tax--;
+  }
+
+  onTotalChange(value):any {
+    this.result = value;
   }
 }
