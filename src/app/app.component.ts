@@ -6,5 +6,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app works!';
+  values: any = {
+    amount: 2000,
+    tax: 16,
+  };
+  result: number = 0;
+  title: string = "Awesome tax calculator";
+  subtitle: string = "Makes your life easier";
+
+  calculate(){
+    this.result = this.values.amount * this.values.tax / 100;
+  }
 }
