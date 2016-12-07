@@ -1,0 +1,19 @@
+<md-card class="box">
+    <md-card-content>
+        <img md-card-image src="assets/images/material.jpg"/>
+        <md-card-title>{{title}}</md-card-title>
+        <md-card-subtitle>{{subtitle}}</md-card-subtitle>
+        <button md-raised-button color="accent" routerLink="/taxboard">
+            TaxBoard routerLink Basic
+        </button>
+        <button md-raised-button color="accent" (click)="goTaxBoard();">
+            TaxBoard navigation from class
+        </button>
+        <button md-raised-button color="accent" [routerLink]="['/taxboard', 1234]">
+            TaxBoard routerLinck with params
+        </button>
+        <button md-raised-button color="accent" (click)="goTaxBoardWithParams();">
+            TaxBoard navigation with params
+        </button>
+    </md-card-content>
+</md-card>
